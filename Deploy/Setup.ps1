@@ -60,11 +60,9 @@ Write-Host "Installing Software"
 Write-Host "-------------------"
 
 # Deploy Manuals and Windows Update Script
-Write-Host "Installing Manuals..."
-Copy-Item "C:\Temp\S410\Manuals\" -Destination C:\Users\Public\Desktop -Recurse
 Write-Host "Installing Windows Update Boot Script..."
-Copy-Item "C:\Temp\S410\WinUpdates.bat" -Destination $StartupPath
-Copy-Item "C:\Temp\S410\WinUpdates.ps1" -Destination C:\users\pcsetup\documents
+Copy-Item "$DeployPath\WinUpdates.bat" -Destination $StartupPath
+Copy-Item "$DeployPath\WinUpdates.ps1" -Destination $env:USERPROFILE\documents
 
 # Install Adobe Reader
 Write-Host "Installing Adobe Reader..."
